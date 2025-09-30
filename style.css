@@ -1,0 +1,89 @@
+/* Base body styling */
+body {
+  margin: 0;
+  font-family: 'Roboto Slab', serif;
+  background: white;
+}
+
+/* First screen fills viewport + centers the pinwheel */
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Circle container for orbiting images */
+.circle-container {
+  position: absolute;
+  /* top: 25%; */
+  left: calc(50vw - 30px);
+  width: 100px;
+  height: 400px;
+  transform-origin: center center;
+}
+
+/* Each image inside the circle */
+.circle-container img {
+  position: absolute;
+  top: 40%;
+  /* left: 50%; */
+  width:60px;
+  height: auto;
+  object-fit: contain;
+  transform-origin: center -150px;
+}
+
+/* Distribute 8 images evenly around circle */
+.circle-container img:nth-child(1) { transform: rotate(0deg) translateY(-150px) rotate(0deg); }
+.circle-container img:nth-child(2) { transform: rotate(45deg) translateY(-150px) rotate(-45deg); }
+.circle-container img:nth-child(3) { transform: rotate(90deg) translateY(-150px) rotate(-90deg); }
+.circle-container img:nth-child(4) { transform: rotate(135deg) translateY(-150px) rotate(-135deg); }
+.circle-container img:nth-child(5) { transform: rotate(180deg) translateY(-150px) rotate(-180deg); }
+.circle-container img:nth-child(6) { transform: rotate(225deg) translateY(-150px) rotate(-225deg); }
+.circle-container img:nth-child(7) { transform: rotate(270deg) translateY(-150px) rotate(-270deg); }
+.circle-container img:nth-child(8) { transform: rotate(315deg) translateY(-150px) rotate(-315deg); }
+
+/* Title in center of pinwheel */
+.title-text {
+  position: absolute;
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  font-size: 2rem;
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Scroll indicator at bottom of first screen */
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.small-text {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.scroll-link {
+  text-align: center;
+  margin-bottom: 40px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.scroll-link:hover {
+  text-decoration: underline; /* or any hover effect */
+}

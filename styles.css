@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    background: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .gallery {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .polaroid {
+    position: absolute;
+    width: 220px;
+    background: #fff;
+    padding: 20px 20px 70px; /* bigger bottom padding for text */
+    box-shadow: 4px 6px 12px rgba(0,0,0,0.2);
+    border: 1px solid #ccc;
+    transform: rotate(-2deg); /* little tilt for fun */
+  }
+  
+  .polaroid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .polaroid p {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    margin: 0;
+  }
+  
