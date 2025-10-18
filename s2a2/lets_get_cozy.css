@@ -50,6 +50,7 @@ body {
 .emojis {
     font-family: 'Yarndings 20', serif !important;
     font-size: 26px !important;
+    cursor: pointer;
 }
 
 img {
@@ -65,18 +66,19 @@ img {
     right: -60px;
     top: -40px;
     pointer-events: auto;
+
 }
 
 .lamp img {
     width: auto;
-    height: 360px;   /* keep proportions */
+    height: 360px;   
 }
 
 
 .lamp::after {
     content: "";
     position: absolute;
-    top: 15px;            /* move above the lamp */
+    top: 15px;            
     left: 25%;
     transform: translateX(-50%);
     width: 120px;
@@ -85,26 +87,42 @@ img {
     filter: blur(20px);
     pointer-events: none;
     z-index: -1;
-  }
+}
 
 
-/* Small phones (<= 480px): stack items, shrink lamp, keep readable sizes */
+
+/* --- Mobile layout: stack items, drink box at the bottom --- */
 @media (max-width: 480px) {
-    .second-line {
-      flex-direction: column;
-      gap: 12px;
-    }
-    .lamp { right: 0; top: -10px; }
-    .lamp img { height: 220px; }
-    .drink-section {
-      width: 300px;
-      height: 120px;
-      font-size: 72px; /* fixed so it doesn't grow/shrink with viewport */
-    }
-    .lets-get { font-size: 48px; transform: translateX(0) translateY(0); }
+    .emoji-row { display: flex; gap: 8px; }
+
+    
+  .second-line {
+    display: flex;
+    flex-direction: column;   /* stack vertically */
+    align-items: flex-start;
+    gap: 12px;
+    position: relative;
   }
+
+  .lets-get {
+    transform: translateY(-10px);
+  }
+
+  .drink-section {
+    width: 300px;
+    height: 120px;
+    font-size: 72px;         
+    margin-top: 6px;
+  }
+
+  .lamp {
+    right: -30px;
+    top: -10px;
+    z-index: 5;
+  }
+}
+
   
-  /* Small/medium (481–768px): side-by-side, moderate sizes */
   @media (min-width: 481px) and (max-width: 768px) {
     .second-line { gap: 16px; }
     .lamp img { height: 280px; }
@@ -116,7 +134,6 @@ img {
     .lets-get { font-size: 64px; transform: translateX(10px) translateY(10px); }
   }
   
-  /* Large screens (>= 1024px): more breathing room, bigger lamp */
   @media (min-width: 1024px) {
     .second-line { gap: 24px; }
     .lamp { right: -80px; top: -50px; }
@@ -129,11 +146,14 @@ img {
     .lets-get { font-size: 86px; transform: translateX(30px) translateY(20px); }
   }
   
-  /* Bonus: huge desktops (>= 1440px) */
   @media (min-width: 1440px) {
     .lamp img { height: 460px; }
     .drink-section { width: 480px; height: 160px; font-size: 104px; }
     .second-line { gap: 28px; }
   }
-  
+
+
+  .emojis:hover {
+    transform: scale(0.65);
+  }
   
