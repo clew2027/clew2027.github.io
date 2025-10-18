@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yarndings+20&display=swap');
+body {
+    font-family: sans-serif;
+    align-items: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+
+}
+
+.cozy-section {
+    display: grid;
+    position: relative;
+}
+
+.second-line {
+    display: flex;
+    align-items: center;   /* vertically center emojis, image, and text */
+    gap: 18px;
+}
+
+.lets-get {
+    font-family: 'Instrument Serif', serif;
+    font-size: 78px;
+    text-align: left;
+    transform: translateX(30px) translateY(20px);
+    letter-spacing: 2px; 
+}
+
+
+.drink-section {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(90px, 8vw, 90px);
+    text-align: center;
+    background: #FFEE8C;
+    width: 400px;         /* fixed width */
+    height: 140px;        /* fixed height */
+    display: flex;        /* centers text */
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.drink-section.clicked {
+    background: #ffd1dc;
+}
+
+.emojis {
+    font-family: 'Yarndings 20', serif !important;
+    font-size: 26px !important;
+}
+
+img {
+    width: 100px;      /* resize */
+    height: auto;      /* keeps proportions */
+    border-radius: 10px; /* rounded corners */
+    display: block;    /* removes extra inline space */
+    margin: 0 auto;  
+}
+
+.lamp {
+    position: absolute;
+    right: -60px;
+    top: -40px;
+    pointer-events: auto;
+}
+
+.lamp img {
+    width: auto;
+    height: 360px;   /* keep proportions */
+}
+
+
+.lamp::after {
+    content: "";
+    position: absolute;
+    top: 15px;            /* move above the lamp */
+    left: 25%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at center, #ffe97f80 0%, transparent 70%);
+    filter: blur(20px);
+    pointer-events: none;
+    z-index: -1;
+  }
+  
