@@ -86,4 +86,54 @@ img {
     pointer-events: none;
     z-index: -1;
   }
+
+
+/* Small phones (<= 480px): stack items, shrink lamp, keep readable sizes */
+@media (max-width: 480px) {
+    .second-line {
+      flex-direction: column;
+      gap: 12px;
+    }
+    .lamp { right: 0; top: -10px; }
+    .lamp img { height: 220px; }
+    .drink-section {
+      width: 300px;
+      height: 120px;
+      font-size: 72px; /* fixed so it doesn't grow/shrink with viewport */
+    }
+    .lets-get { font-size: 48px; transform: translateX(0) translateY(0); }
+  }
+  
+  /* Small/medium (481–768px): side-by-side, moderate sizes */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .second-line { gap: 16px; }
+    .lamp img { height: 280px; }
+    .drink-section {
+      width: 340px;
+      height: 130px;
+      font-size: 84px;
+    }
+    .lets-get { font-size: 64px; transform: translateX(10px) translateY(10px); }
+  }
+  
+  /* Large screens (>= 1024px): more breathing room, bigger lamp */
+  @media (min-width: 1024px) {
+    .second-line { gap: 24px; }
+    .lamp { right: -80px; top: -50px; }
+    .lamp img { height: 380px; }
+    .drink-section {
+      width: 420px;
+      height: 150px;
+      font-size: 96px;
+    }
+    .lets-get { font-size: 86px; transform: translateX(30px) translateY(20px); }
+  }
+  
+  /* Bonus: huge desktops (>= 1440px) */
+  @media (min-width: 1440px) {
+    .lamp img { height: 460px; }
+    .drink-section { width: 480px; height: 160px; font-size: 104px; }
+    .second-line { gap: 28px; }
+  }
+  
   
