@@ -101,3 +101,18 @@ function drawCluster(c, isEmphasized) {
     }
   }
 }
+
+function mousePressed() {
+  // Add a new cluster at the mouse position
+  let newCluster = {
+    x: mouseX,
+    y: mouseY,
+    rings: int(random(3, 9)), // Random number of circles between 5 and 8
+    baseRadius: random(5, 25),
+    currentRings: int(random(5, 9)),
+    baseRings: int(random(5, 9)),
+    colorTransition: 0
+  };
+
+  clusters.push(newCluster);
+}
